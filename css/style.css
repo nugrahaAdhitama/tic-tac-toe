@@ -88,6 +88,17 @@ h1 {
     background-color: #0056B3;
 }
 
+#symbol-selection {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 1rem;
+}
+
+#symbol-selection input {
+    width: 30px;
+    text-align: center;
+}
+
 .fade-in {
     animation: fadeIn 0.5s;
 }

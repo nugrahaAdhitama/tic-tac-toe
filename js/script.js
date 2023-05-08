@@ -1,5 +1,5 @@
 let gameBoard = ["", "", "", "", "", "", "", "", ""];
-let currentPlayer = "X";
+let currentPlayer;
 let player1Score = 0;
 let player2Score = 0;
 let isPlayer1Turn = true;
@@ -81,6 +81,9 @@ function updateScore() {
 }
 
 function handleResetClick() {
+    if ( !setPlayerSymbols() ) {
+        return;
+    }
     gameBoard = ["", "", "", "", "", "", "", "", ""];
     currentPlayer = "X";
     isplayer1Turn = true;
@@ -92,4 +95,24 @@ function handleResetClick() {
 
 function checkDraw() {
     return gameBoard.every((cell) => cell !== "");
+}
+
+function setPlayerSymbols() {
+    const player1SymbolInput = document.getElementById("player1-symbol");
+    const player2SymbolInput = document.getElementById("player2-symbol");
+
+    if (player1SymbolInput.value === "" || player2SymbolInput.value === "") {
+        alert("Please choose different non-empty symbols for each player.");
+        return false;
+    } else if (player1SymbolInput.value === player2SymbolInput.value) {
+        alert("Please choose different symbols for each player.");
+        return false;
+    }
+
+    currentPlayer = player1SymbolInput.value;
+    return true;
+}
+
+if (!setPlayerSymbols()) {
+    alert("Using default symbols X and O.");
 }
