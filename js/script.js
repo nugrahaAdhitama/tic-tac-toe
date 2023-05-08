@@ -2,6 +2,7 @@ let gameBoard = ["", "", "", "", "", "", "", "", ""];
 let currentPlayer = "X";
 let player1Score = 0;
 let player2Score = 0;
+let isPlayer1Turn = true;
 
 const cells = document.querySelectorAll(".cell");
 cells.forEach((cell) => {
@@ -19,6 +20,10 @@ function handleCellClick(event) {
         return;
     }
 
+    if ((isPlayer1Turn && currentPlayer === "0") || (!isPlayer1Turn && currentPlayer === "X")) {
+        return;
+    }
+
     gameBoard[cellIndex] = currentPlayer;
     clickedCell.textContent = currentPlayer;
 
@@ -32,6 +37,7 @@ function handleCellClick(event) {
         updateScore();
     } else {
         currentPlayer = currentPlayer === "X" ? "O" : "X";
+        isplayer1Turn = !isplayer1Turn;
     }
 }
 
@@ -73,6 +79,7 @@ function updateScore() {
 function handleResetClick() {
     gameBoard = ["", "", "", "", "", "", "", "", ""];
     currentPlayer = "X";
+    isplayer1Turn = true;
     cells.forEach((cell) => {
         cell.textContent = "";
     })
