@@ -71,7 +71,9 @@ function updateScore() {
 }
 
 function handleResetClick() {
-    player1Score = 0;
-    player2Score = 0;
-    updateScore();
+    gameBoard = ["", "", "", "", "", "", "", "", ""];
+    currentPlayer = "X";
+    cells.forEach((cell) => {
+        cell.textContent = "";
+    })
 }
