@@ -1,0 +1,15 @@
+Fitur baru yang dapat dikembangkan:
+
+a. Membuat sistem giliran antar pemain, sehingga pemain tidak dapat mengklik lebih dari satu kali secara berurutan. DONE
+
+b. Menampilkan pesan yang lebih informatif saat permainan berakhir, seperti menunjukkan kombinasi yang menang atau mengumumkan hasil seri jika tidak ada pemenang.
+
+c. Menambahkan pilihan untuk memilih simbol pemain (bukan hanya X dan O).
+
+d. Menambahkan fitur untuk bermain melawan komputer dengan tingkat kesulitan yang berbeda.
+
+e. Menyimpan skor dan histori permainan menggunakan LocalStorage atau sistem lain, sehingga pengguna dapat melihat statistik permainan mereka seiring waktu.
+
+f. Menggabungkan animasi atau transisi saat sel diperbarui atau permainan berakhir untuk meningkatkan pengalaman pengguna.
+
+Anda dapat memilih untuk mengoptimalkan kode yang ada atau menambahkan fitur baru sesuai dengan kebutuhan dan prioritas Anda.

@@ -27,14 +27,17 @@ function handleCellClick(event) {
     gameBoard[cellIndex] = currentPlayer;
     clickedCell.textContent = currentPlayer;
 
-    if (checkWinner()) {
-        alert(`Player ${currentPlayer} wins!`);
+    const winningCombination = checkWinner();
+    if (winningCombination) {
+        alert(`Player ${currentPlayer} wins! Winning combination: ${winningCombination}`);
         if (currentPlayer === "X") {
             player1Score++;
         } else {
             player2Score++;
         }
         updateScore();
+    } else if ( checkDraw() ) {
+        alert("Draw!");
     } else {
         currentPlayer = currentPlayer === "X" ? "O" : "X";
         isplayer1Turn = !isplayer1Turn;
@@ -61,11 +64,11 @@ function checkWinner() {
             gameBoard[a] === gameBoard[b] &&
             gameBoard[a] === gameBoard[c]
         ) {
-            return true;
+            return combination;
         }
     }
 
-    return false;
+    return null;
 }
 
 function updateScore() {
@@ -83,4 +86,8 @@ function handleResetClick() {
     cells.forEach((cell) => {
         cell.textContent = "";
     })
+}
+
+function checkDraw() {
+    return gameBoard.every((cell) => cell !== "");
 }
