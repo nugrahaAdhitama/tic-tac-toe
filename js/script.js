@@ -20,8 +20,10 @@ function handleCellClick(event) {
         return;
     }
 
-    if ((isPlayer1Turn && currentPlayer === "0") || (!isPlayer1Turn && currentPlayer === "X")) {
-        return;
+    if (isPlayer1Turn) {
+        currentPlayer = document.getElementById("player1-symbol").value;
+    } else {
+        currentPlayer = document.getElementById("player2-symbol").value;
     }
 
     gameBoard[cellIndex] = currentPlayer;
@@ -40,8 +42,7 @@ function handleCellClick(event) {
     } else if ( checkDraw() ) {
         alert("Draw!");
     } else {
-        currentPlayer = currentPlayer === "X" ? "O" : "X";
-        isplayer1Turn = !isplayer1Turn;
+        isPlayer1Turn = !isPlayer1Turn;
     }
 }
 
