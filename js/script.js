@@ -1,10 +1,15 @@
 let gameBoard = ["", "", "", "", "", "", "", "", ""];
 let currentPlayer = "X";
+let player1Score = 0;
+let player2Score = 0;
 
 const cells = document.querySelectorAll(".cell");
 cells.forEach((cell) => {
     cell.addEventListener("click", handleCellClick);
 })
+
+const resetButton = document.getElementById("reset");
+resetButton.addEventListener("click", handleResetClick);
 
 function handleCellClick(event) {
     const clickedCell = event.target;
@@ -19,6 +24,12 @@ function handleCellClick(event) {
 
     if (checkWinner()) {
         alert(`Player ${currentPlayer} wins!`);
+        if (currentPlayer === "X") {
+            player1Score++;
+        } else {
+            player2Score++;
+        }
+        updateScore();
     } else {
         currentPlayer = currentPlayer === "X" ? "O" : "X";
     }
@@ -49,4 +60,18 @@ function checkWinner() {
     }
 
     return false;
+}
+
+function updateScore() {
+    const player1ScoreDisplay = document.getElementById("player1");
+    const player2ScoreDisplay = document.getElementById("player2");
+
+    player1ScoreDisplay.textContent = `Player 1: ${player1Score}`;
+    player2ScoreDisplay.textContent = `Player 2: ${player2Score}`;
+}
+
+function handleResetClick() {
+    player1Score = 0;
+    player2Score = 0;
+    updateScore();
 }
