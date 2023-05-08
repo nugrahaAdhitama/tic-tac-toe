@@ -26,6 +26,7 @@ function handleCellClick(event) {
 
     gameBoard[cellIndex] = currentPlayer;
     clickedCell.textContent = currentPlayer;
+    clickedCell.classList.add("fade-in");
 
     const winningCombination = checkWinner();
     if (winningCombination) {
@@ -85,6 +86,7 @@ function handleResetClick() {
     isplayer1Turn = true;
     cells.forEach((cell) => {
         cell.textContent = "";
+        cell.classList.remove("fade-in");
     })
 }
 

@@ -2,7 +2,7 @@ Fitur baru yang dapat dikembangkan:
 
 a. Membuat sistem giliran antar pemain, sehingga pemain tidak dapat mengklik lebih dari satu kali secara berurutan. DONE
 
-b. Menampilkan pesan yang lebih informatif saat permainan berakhir, seperti menunjukkan kombinasi yang menang atau mengumumkan hasil seri jika tidak ada pemenang.
+b. Menampilkan pesan yang lebih informatif saat permainan berakhir, seperti menunjukkan kombinasi yang menang atau mengumumkan hasil seri jika tidak ada pemenang. DONE
 
 c. Menambahkan pilihan untuk memilih simbol pemain (bukan hanya X dan O).
 

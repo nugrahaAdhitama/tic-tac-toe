@@ -88,6 +88,19 @@ h1 {
     background-color: #0056B3;
 }
 
+.fade-in {
+    animation: fadeIn 0.5s;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
 @media (max-width: 480px) {
     #game-container {
         width: 100%;
